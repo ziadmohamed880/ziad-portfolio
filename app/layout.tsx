@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import { Archivo, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-sans",
+  display: "swap",
+  preload: false,
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
+  preload: false,
+});
+
+export const metadata: Metadata = {
+  title: "Ziad Mohamed Shawky",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col font-sans">{children}</body>
+    </html>
+  );
+}
