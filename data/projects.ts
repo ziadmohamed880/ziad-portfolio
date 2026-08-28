@@ -6,7 +6,8 @@ export const projects: Project[] = [
   {
     slug: "hirelens",
     title: "HireLens",
-    tagline: "Career intelligence platform that matches resumes to job descriptions",
+    tagline:
+      "Career intelligence platform that matches resumes to job descriptions",
     description:
       "A hybrid scoring engine that reads a resume and a job posting and scores how well they match. Combines SBERT embeddings with TF-IDF at a 0.3/0.7 weighting, with OCR for scanned PDFs and an LLM layer for feedback. I owned the NLP and skill-extraction pipeline, where a fix to the word-boundary logic in extraction moved precision and F1 sharply.",
     role: "Team leader, NLP engineer, 5-person team",
@@ -48,7 +49,8 @@ export const projects: Project[] = [
   {
     slug: "land-type-classification",
     title: "Land type classification",
-    tagline: "Deep network classifying six land types from Sentinel-2 satellite imagery",
+    tagline:
+      "Deep network classifying six land types from Sentinel-2 satellite imagery",
     description:
       "10,000+ Sentinel-2 satellite tiles trained a convolutional model to classify land cover into six types. Normalization and noise reduction brought accuracy to 98%. Built with a team and deployed on Hugging Face Spaces.",
     role: "Team project",
@@ -63,7 +65,8 @@ export const projects: Project[] = [
   {
     slug: "student-risk-prediction",
     title: "Student academic risk",
-    tagline: "Classifying students at risk of dropping out from the UCI dataset",
+    tagline:
+      "Classifying students at risk of dropping out from the UCI dataset",
     description:
       "Deployed as a FastAPI endpoint behind a Streamlit interface, this pipeline predicts academic risk level end to end — feature engineering through hyperparameter tuning. A tuned random forest reached 84% accuracy.",
     tech: ["Python", "scikit-learn", "Random Forest", "FastAPI", "Streamlit"],
@@ -77,7 +80,8 @@ export const projects: Project[] = [
   {
     slug: "premier-league-analysis",
     title: "Premier league analysis",
-    tagline: "Ten seasons of match data queried and visualised for tactical trends",
+    tagline:
+      "Ten seasons of match data queried and visualised for tactical trends",
     description:
       "Analysis of more than 3,000 Premier League matches from 2013 to 2023, looking at team performance and tactical efficiency over time. Data queried through MySQL and SQLAlchemy, with xG trends and win-loss ratios visualised in Seaborn and Matplotlib.",
     tech: ["Python", "MySQL", "SQLAlchemy", "Pandas", "Seaborn"],
