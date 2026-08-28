@@ -1,6 +1,7 @@
 // data/site.ts
 
 import type { SiteConfig } from "@/types";
+import { getSiteUrl } from "@/lib/site-url";
 
 export const site: SiteConfig = {
   name: "Ziad Mohamed Shawky",
@@ -26,6 +27,12 @@ export const site: SiteConfig = {
     title: "Ziad Mohamed Shawky — Data scientist",
     description:
       "Data scientist working in NLP and applied machine learning. Projects in resume matching, text classification, and satellite imagery.",
-    url: "TODO",
+    url: getSiteUrl(),
+  },
+
+  notFound: {
+    title: "Page not found.",
+    description: "The page you're looking for doesn't exist or moved.",
+    cta: "Back home",
   },
 };

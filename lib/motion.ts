@@ -19,6 +19,16 @@ export const fadeUp: Variants = {
   },
 };
 
+// Transform-only, no opacity — for above-the-fold content where hiding
+// behind opacity: 0 would delay LCP until after hydration.
+export const slideUp: Variants = {
+  hidden: { y: 16 },
+  visible: {
+    y: 0,
+    transition: { duration: duration.base, ease },
+  },
+};
+
 export const stagger: Variants = {
   hidden: {},
   visible: {

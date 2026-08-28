@@ -9,7 +9,7 @@ const focusRing =
 export function Hero() {
   return (
     <Section reveal={false}>
-      <Reveal stagger>
+      <Reveal stagger preserveOpacity>
         <p className="text-muted font-mono text-sm">
           {site.name} — {site.role} — {site.location}
         </p>

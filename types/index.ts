@@ -54,4 +54,9 @@ export interface SiteConfig {
     description: string;
     url: string;
   };
+  notFound: {
+    title: string;
+    description: string;
+    cta: string;
+  };
 }
