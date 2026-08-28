@@ -41,6 +41,7 @@ export interface SiteConfig {
   role: string;
   location: string;
   email: string;
+  image: string;
   headline: string;
   intro: string;
   about: string;

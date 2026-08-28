@@ -8,6 +8,7 @@ export const site: SiteConfig = {
   role: "Data scientist",
   location: "Alexandria, Egypt — open to remote",
   email: "ziadmohamed8804@gmail.com",
+  image: "/images/profile.webp",
 
   headline: "I build machine learning systems that ship.",
 
