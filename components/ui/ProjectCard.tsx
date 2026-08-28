@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import { m, useReducedMotion } from "motion/react";
 import type { Project } from "@/types";
 import { TechTag } from "@/components/ui/TechTag";
 import { GithubIcon } from "@/components/ui/icons";
+import { duration, ease } from "@/lib/motion";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,8 +16,14 @@ const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2";
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <article className="border-rule/40 bg-surface rounded-[2px] border">
+    <m.article
+      className="border-rule/40 bg-surface rounded-[2px] border"
+      whileHover={reduceMotion ? undefined : { y: -4 }}
+      transition={{ duration: duration.fast, ease }}
+    >
       <div className="relative aspect-video">
         <Image
           src={project.image}
@@ -89,6 +99,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
       </div>
-    </article>
+    </m.article>
   );
 }

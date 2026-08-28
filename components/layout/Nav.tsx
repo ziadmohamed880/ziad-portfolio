@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 import { cn, container } from "@/lib/utils";
@@ -17,15 +18,35 @@ const links = [
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
+  const reduceMotion = useReducedMotion();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 80);
+  });
 
   return (
     <header
       className={cn(
-        "border-rule/40 bg-ground z-50 border-b",
-        isOpen ? "fixed inset-0 overflow-y-auto" : "sticky top-0",
+        "border-rule/40 z-50 border-b",
+        isOpen
+          ? "bg-ground fixed inset-0 overflow-y-auto"
+          : cn(
+              !reduceMotion && "transition-colors duration-200",
+              isScrolled ? "bg-ground/80 backdrop-blur-md" : "bg-ground",
+              "sticky top-0",
+            ),
       )}
     >
-      <nav className={`${container} flex items-center justify-between py-6`}>
+      <nav
+        className={cn(
+          container,
+          "flex items-center justify-between",
+          !reduceMotion && "transition-[padding] duration-200",
+          isOpen || !isScrolled ? "py-6" : "py-4",
+        )}
+      >
         <a href="#" className={`font-display text-chalk text-sm ${focusRing}`}>
           {site.name}
         </a>
