@@ -1,6 +1,9 @@
-import { Download } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Download, Menu, X } from "lucide-react";
 import { site } from "@/data/site";
-import { container } from "@/lib/utils";
+import { cn, container } from "@/lib/utils";
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2";
@@ -13,14 +16,21 @@ const links = [
 ];
 
 export function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="border-rule/40 bg-ground sticky top-0 z-50 border-b">
+    <header
+      className={cn(
+        "border-rule/40 bg-ground z-50 border-b",
+        isOpen ? "fixed inset-0 overflow-y-auto" : "sticky top-0",
+      )}
+    >
       <nav className={`${container} flex items-center justify-between py-6`}>
         <a href="#" className={`font-display text-chalk text-sm ${focusRing}`}>
           {site.name}
         </a>
 
-        <ul className="flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -36,12 +46,51 @@ export function Nav() {
         <a
           href={site.links.cv}
           download
-          className={`text-muted flex items-center gap-2 font-mono text-sm ${focusRing}`}
+          className={`text-muted hidden items-center gap-2 font-mono text-sm md:flex ${focusRing}`}
         >
           <Download size={14} />
           CV
         </a>
+
+        <button
+          type="button"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((open) => !open)}
+          className={`text-chalk -mr-3 p-3 md:hidden ${focusRing}`}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
+
+      {isOpen && (
+        <div className="border-rule/40 border-t md:hidden">
+          <ul className={`${container} flex flex-col py-4`}>
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-muted block py-3 font-mono text-sm ${focusRing}`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href={site.links.cv}
+                download
+                onClick={() => setIsOpen(false)}
+                className={`text-muted flex items-center gap-2 py-3 font-mono text-sm ${focusRing}`}
+              >
+                <Download size={14} />
+                Download CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

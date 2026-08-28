@@ -69,7 +69,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-signal flex items-center gap-2 font-mono text-xs ${focusRing}`}
+                className={`text-signal flex items-center gap-2 py-4 font-mono text-xs ${focusRing}`}
               >
                 <ExternalLink size={14} />
                 Live demo
@@ -80,7 +80,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.links.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-muted flex items-center gap-2 font-mono text-xs ${focusRing}`}
+                className={`text-muted flex items-center gap-2 py-4 font-mono text-xs ${focusRing}`}
               >
                 <GithubIcon size={14} />
                 Code

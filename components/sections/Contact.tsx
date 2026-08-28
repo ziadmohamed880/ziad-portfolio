@@ -20,7 +20,7 @@ export function Contact() {
         <li>
           <a
             href={`mailto:${site.email}`}
-            className={`text-chalk flex items-center gap-2 font-mono text-sm ${focusRing}`}
+            className={`text-chalk flex items-center gap-2 py-3 font-mono text-sm ${focusRing}`}
           >
             <Mail size={16} />
             {site.email}
@@ -31,7 +31,7 @@ export function Contact() {
             href={site.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-chalk flex items-center gap-2 font-mono text-sm ${focusRing}`}
+            className={`text-chalk flex items-center gap-2 py-3 font-mono text-sm ${focusRing}`}
           >
             <GithubIcon size={16} />
             GitHub
@@ -42,7 +42,7 @@ export function Contact() {
             href={site.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-chalk flex items-center gap-2 font-mono text-sm ${focusRing}`}
+            className={`text-chalk flex items-center gap-2 py-3 font-mono text-sm ${focusRing}`}
           >
             <LinkedinIcon size={16} />
             LinkedIn

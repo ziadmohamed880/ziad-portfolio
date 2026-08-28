@@ -10,20 +10,20 @@ export function Footer() {
   return (
     <footer className="border-rule/40 border-t">
       <div
-        className={`${container} flex flex-wrap items-center justify-between gap-4 py-12`}
+        className={`${container} flex flex-wrap items-center justify-between gap-4 py-8`}
       >
         <p className="text-muted font-mono text-xs">
           {site.name} — {new Date().getFullYear()}
         </p>
 
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-2">
           <li>
             <a
               href={`mailto:${site.email}`}
               aria-label="Email"
-              className={`text-muted ${focusRing}`}
+              className={`text-muted block p-3 ${focusRing}`}
             >
-              <Mail size={16} />
+              <Mail size={20} />
             </a>
           </li>
           <li>
@@ -32,9 +32,9 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className={`text-muted ${focusRing}`}
+              className={`text-muted block p-3 ${focusRing}`}
             >
-              <GithubIcon size={16} />
+              <GithubIcon size={20} />
             </a>
           </li>
           <li>
@@ -43,9 +43,9 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className={`text-muted ${focusRing}`}
+              className={`text-muted block p-3 ${focusRing}`}
             >
-              <LinkedinIcon size={16} />
+              <LinkedinIcon size={20} />
             </a>
           </li>
         </ul>

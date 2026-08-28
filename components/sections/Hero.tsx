@@ -12,7 +12,7 @@ export function Hero() {
         {site.name} — {site.role} — {site.location}
       </p>
 
-      <h1 className="font-display text-chalk mt-4 max-w-2xl text-3xl">
+      <h1 className="font-display text-chalk mt-4 max-w-2xl text-2xl md:text-3xl">
         {site.headline}
       </h1>
 
