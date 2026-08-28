@@ -6,6 +6,7 @@ import { m, useReducedMotion } from "motion/react";
 import type { Project } from "@/types";
 import { TechTag } from "@/components/ui/TechTag";
 import { GithubIcon } from "@/components/ui/icons";
+import { MetricBar } from "@/components/ui/MetricBar";
 import { duration, ease } from "@/lib/motion";
 
 interface ProjectCardProps {
@@ -51,17 +52,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </p>
 
         {project.metrics && (
-          <dl className="border-rule/40 mt-6 flex flex-wrap gap-8 border-t pt-6">
+          <div className="border-rule/40 mt-6 flex flex-wrap gap-8 border-t pt-6">
             {project.metrics.map((metric) => (
-              <div key={metric.label}>
-                <dt className="text-muted font-mono text-xs">{metric.label}</dt>
-                <dd className="text-chalk mt-1 font-mono text-lg">
-                  {metric.from.toFixed(2)}{" "}
-                  <span className="text-signal">→</span> {metric.to.toFixed(2)}
-                </dd>
-              </div>
+              <MetricBar
+                key={metric.label}
+                label={metric.label}
+                from={metric.from}
+                to={metric.to}
+                className="w-full md:w-auto md:flex-1"
+              />
             ))}
-          </dl>
+          </div>
         )}
 
         <ul className="mt-6 flex flex-wrap gap-2">
