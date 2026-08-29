@@ -43,12 +43,12 @@ export function Hero() {
         </Reveal>
 
         <Reveal preserveOpacity>
-          <div className="border-rule/40 relative aspect-[3/4] w-48 overflow-hidden rounded-[2px] border md:w-64">
+          <div className="border-rule/40 relative aspect-[4/3] w-64 overflow-hidden rounded-[2px] border md:w-96">
             <Image
               src={site.image}
               alt={site.name}
               fill
-              sizes="(min-width: 768px) 256px, 192px"
+              sizes="(min-width: 768px) 384px, 256px"
               className="object-cover"
               priority
             />
