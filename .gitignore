@@ -40,4 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# raw source assets — originals live here, optimised copies go in public/
+/images
