@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ziad-portfolio
 
-## Getting Started
+Personal portfolio for Ziad Mohamed Shawky — data scientist / ML engineer.
+One page, fully static, animated.
 
-First, run the development server:
+**Live:** https://ziad-portfolio-blond.vercel.app
+
+## Stack
+
+Next.js 15 (App Router) · TypeScript strict · Tailwind CSS v4 · motion v11 · Lenis · lucide-react. Deployed on Vercel.
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/          layout · page · globals.css · sitemap · OG image · 404
+components/
+  layout/     Nav · Section · Footer
+  sections/   Hero · Projects · Experience · Skills · Contact
+  ui/         ProjectCard · MetricBar · Reveal · TechTag · icons
+data/         projects · experience · skills · site
+lib/          motion · utils · site-url
+types/        index
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Content lives in `data/`, design tokens in `app/globals.css`, and every animation
+variant in `lib/motion.ts`. Components hold no copy, colours, or durations of their
+own — see [CLAUDE.md](CLAUDE.md) for the full design system and conventions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pushes to `main` deploy to production automatically via the Vercel GitHub
+integration.
