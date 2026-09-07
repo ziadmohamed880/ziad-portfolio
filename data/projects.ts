@@ -4,6 +4,22 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    slug: "retail-sales-dashboard",
+    title: "Retail Sales Dashboard",
+    tagline:
+      "Power BI report modelling 5,000 retail transactions across revenue, margin, and customer segments",
+    description:
+      "A star-schema Power BI model over 5,000 transactions, with a DAX measure layer covering revenue, margin, RFM customer segmentation, and time intelligence. Four report pages — overview, customers, and products — with drill-through and a custom theme built around a single reserved accent colour.",
+    role: "Solo project",
+    tech: ["Power BI", "DAX", "Power Query", "Star Schema"],
+    image: "/images/projects/retail-sales-dashboard.webp",
+    links: {
+      demo: "https://app.powerbi.com/view?r=eyJrIjoiMGFjNTZhMWItOWQyOS00ZmI0LWI2MjMtZDNhMjYyMjYwMGIzIiwidCI6ImVhZjYyNGM4LWEwYzQtNDE5NS04N2QyLTQ0M2U1ZDc1MTZjZCIsImMiOjh9&pageName=17b2241b2961e7dcb77e",
+    },
+    year: "2026",
+    featured: false,
+  },
+  {
     slug: "hirelens",
     title: "HireLens",
     tagline:
